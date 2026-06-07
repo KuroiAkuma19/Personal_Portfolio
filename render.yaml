@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: myportfolio-server
+    env: docker
+    repo: https://github.com/KuroiAkuma19/MyPortfolio.git
+    branch: main
+    dockerfilePath: server/Dockerfile
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: ALLOWED_HOSTS
+        value: myportfolio-server.onrender.com
+        sync: false

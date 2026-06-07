@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
+import ContactForm from './components/ContactForm.jsx'
 
 const profile = {
   name: 'Arnold Wilson Fernandes',
@@ -382,6 +383,10 @@ function App() {
             </div>
           </section>
         )}
+
+        <section className="py-10">
+          <ContactForm />
+        </section>
 
         <footer className="flex flex-wrap items-center justify-between gap-4 py-8 text-sm text-slate-400">
         </footer>
