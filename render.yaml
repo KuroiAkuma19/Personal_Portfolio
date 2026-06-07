@@ -1,8 +1,8 @@
 services:
   - type: web
-    name: myportfolio-server
+    name: Personal_Portfolio-server
     env: docker
-    repo: https://github.com/KuroiAkuma19/MyPortfolio.git
+    repo: https://github.com/KuroiAkuma19/Personal_Portfolio.git
     branch: main
     dockerfilePath: server/Dockerfile
     plan: free
@@ -12,5 +12,5 @@ services:
       - key: SECRET_KEY
         sync: false
       - key: ALLOWED_HOSTS
-        value: myportfolio-server.onrender.com
+        value: Personal-Portfolio-server.onrender.com
         sync: false

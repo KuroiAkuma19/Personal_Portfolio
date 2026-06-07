@@ -2,10 +2,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-//added base: "/MyPortfolio/"
+//added base: "/Personal_Portfolio/"
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/MyPortfolio/",
+  base: "/Personal_Portfolio/",
   build: {
     chunkSizeWarningLimit: 900,
   },
