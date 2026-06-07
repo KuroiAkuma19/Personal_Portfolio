@@ -6,12 +6,18 @@ export default function ContactForm() {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState('')
 
+  // Use Vite env var VITE_API_BASE in production, fallback to relative path for local dev
+  const rawBase = import.meta.env.VITE_API_BASE || ''
+  const apiBase = rawBase.replace(/\/$/, '')
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
 
+    const endpoint = apiBase ? `${apiBase}/api/contact/` : '/api/contact/'
+
     try {
-      const res = await fetch('/api/contact/', {
+      const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message }),
